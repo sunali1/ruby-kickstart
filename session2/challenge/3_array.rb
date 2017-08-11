@@ -5,7 +5,6 @@
 # "abcdefg".every_other_char  # => "aceg"
 # "".every_other_char         # => ""
 
-class String
-  def every_other_char
+  def every_other_char(string)
+    string.chars.each_with_index.select{|e| e.last.even?}.map(&:first).join
   end
-end
