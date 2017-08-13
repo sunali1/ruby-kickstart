@@ -16,4 +16,11 @@
 # match_maker true,  true,  true, false, nil    # => [false, false]
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
-
+def match_maker(a, b, *c)
+    arr = []
+  if (a == false && b == c) || (a == true && b != c)
+    return arr << true
+  else
+    return arr << false
+end
+end
