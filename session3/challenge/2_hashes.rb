@@ -8,3 +8,13 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
+def staircase(n)
+  result = {}
+  1.upto n do|crnt|
+    next if crnt.even?
+    all = Array.new(crnt){|i| i+1}
+    evens = all.select{|i| i.even?}
+    result[crnt] = evens
+  end
+  result
+end
