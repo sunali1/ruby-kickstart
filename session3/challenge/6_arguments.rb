@@ -16,11 +16,17 @@
 # match_maker true,  true,  true, false, nil    # => [false, false]
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
-def match_maker(a, b, *c)
+def match_maker(a, *b)
     arr = []
-  if (a == false && b == c) || (a == true && b != c)
-    return arr << true
-  else
-    return arr << false
-end
+    b.each_slice 2 do |first, last|
+      first =!! first
+      last =!! last
+      result = if a
+        first != last
+      else
+        first == last
+      end
+      arr << result
+    end
+    arr
 end
