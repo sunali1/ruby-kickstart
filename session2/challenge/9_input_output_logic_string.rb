@@ -33,13 +33,6 @@ def deaf_grandma
     end
   end
 end
-
-deaf_grandma if $0 == __FILE__ # this will call your code so you can run it from the terminal
-
-
-
-
-
 # This will call your code so you can run it from the terminal.
 # But not call it otherwise, so that it will work with our tests.
 deaf_grandma if $0 == __FILE__
